@@ -1,0 +1,60 @@
+<html>
+<head>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            padding-top: 100px;
+	    display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        button {
+            width: 100px;
+            height: 40px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="question">
+        Esther um dia vai parar de enrolar o João?
+    </div>
+    <div id="buttons">
+        <button id="sim">Sim</button>
+        <button id="nao">Não</button>
+    </div>
+
+    <script>
+        const simButton = document.getElementById("sim");
+        const naoButton = document.getElementById("nao");
+        const question = document.getElementById("question");
+
+        simButton.addEventListener("click", () => {
+            question.innerHTML = "AMEMMM";
+        });
+
+        naoButton.addEventListener("click", () => {
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+            const randomX = Math.random() * (screenWidth - 100);
+            const randomY = Math.random() * (screenHeight - 100);
+
+            naoButton.style.position = "absolute";
+            naoButton.style.top = randomY + "px";
+            naoButton.style.left = randomX + "px";
+        });
+    </script>
+</body>
+</html>
